@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
+      <script>
+        if (localStorage.getItem('logueado') !== 'si') {
+            window.location.href = 'login.html';
+        }
+    </script>
     <header class="d-flex-j-content-center custom-header py-3">
         <div class="container">
             <h1 class="background-brown color-aliceblue font-family-courier round-1 text-center p-3 mb-0">Tienda de Jane</h1>
