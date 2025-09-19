@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const message = document.getElementById('login-message');
 
           
-            if (username === 'admin' && password === '1234') {
+            if (username === 'marcoxux2@gmail.com' && password === '1234') {
                
                 localStorage.setItem('logueado', 'si');
                 
