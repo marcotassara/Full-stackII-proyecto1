@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const confirmPassword = document.getElementById('confirm-password').value;
             const message = document.getElementById('register-message');
 
-            // Validaciones
+       
             if (!nombre || !apellido || !correo || !password || !confirmPassword || isNaN(edad)) {
                 message.textContent = 'Por favor, completa todos los campos.';
                 return;
@@ -30,12 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // Si todo está bien
+          
             message.style.color = 'green';
             message.textContent = '¡Registro exitoso! Redirigiendo al login...';
             registerForm.reset();
 
-            // Redirigir después de 2 segundos
+           
             setTimeout(function () {
                 window.location.href = 'login.html';
             }, 2000);
