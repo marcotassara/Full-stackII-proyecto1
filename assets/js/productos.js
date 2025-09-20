@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: "./assets/img/score591ML.jpg"
         },
         {
-            nombre: "Galletas de Chocolate",
-            descripcion: "Deliciosas galletas con trozos de chocolate.",
+            nombre: "Coca-cola 1.25L",
+            descripcion: "La clásica y refrescante bebida de cola en su versión personal.",
             precio: "$1.200",
             imagen: "./assets/img/coca-cola1.25L.jpg"
         }

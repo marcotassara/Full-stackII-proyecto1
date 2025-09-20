@@ -15,11 +15,15 @@
             window.location.href = 'login.html';
         }
     </script>
-    <header class="d-flex-j-content-center custom-header py-3">
-        <div class="container">
-            <h1 class="background-brown color-aliceblue font-family-courier round-1 text-center p-3 mb-0">Tienda de Jane</h1>
+<header class="background-brown d-flex-j-content-center custom-header py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="color-aliceblue font-family-courier round-1 p-3 mb-0 text-center">Tienda de Jane</h1>
+        <div id="logout-button-container">
+            <button id="logout-button" class="btn btn-danger">Cerrar Sesión</button>
         </div>
-    </header>
+    </div>
+</header>
+
 
     <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container">
@@ -44,7 +48,7 @@
         <div class="row">
             <div class="col-12 text-center mb-4">
                 <h2 class="mb-3">Nuestros Productos</h2>
-                <p class="d-flex-j-content-center">
+                <p class="d-flex-j-content-center color-black font-family-courier">
                     Tenemos muchos productos para tí, indaga en nuestra página web y ve ¡¡¡todas nuestras mercaderías!!!
                 </p>
             </div>
@@ -89,7 +93,8 @@
            
 <div class="col-md-6 mb-4">
     <h2 class="text-center mb-3">Nuestras Tiendas</h2>
-    <p class="text-center">
+    <p class="text-center
+      font-family-courier color-black">
         De momento tenemos solo una sucursal se encuentra en....
     </p>
     <div class="d-flex justify-content-center mb-4">
@@ -119,10 +124,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 text-center mb-3 mb-md-0">
-                    <p class="mb-0 fw-bold">TIENDA: Tiendita Jane</p>
+                    <p class="mb-0 fw-bold color-black">TIENDA: Tienda Jane</p>
                 </div>
                 <div class="col-md-4 text-center mb-3 mb-md-0">
-                    <p class="mb-0">CONTACTO: +569 2222 3333</p>
+                    <p class="mb-0 color-black">CONTACTO: +569 2222 3333</p>
                 </div>
                 <div class="col-md-4 text-center">
                     <a class="no-underline color-black" href="index.html">INICIO</a>
@@ -133,5 +138,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/logout.js"></script>
 </body>
 </html>
