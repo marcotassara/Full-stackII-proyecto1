@@ -1,11 +1,25 @@
 /* ======================== */
-/* Estilos de Layout       */
+/* Estilos Base y Tipografía */
 /* ======================== */
 body {
     background-color: #f5f5dc; /* beige clarito */
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333; /* Color de texto base para mejor legibilidad */
 }
 
+h1, h2, h3, h4 {
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(138, 17, 17); /* Color café oscuro para los títulos */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ======================== */
+/* Estilos de Layout y Contenedores */
+/* ======================== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -18,6 +32,10 @@ body {
 
 .justify-content-center {
     justify-content: center;
+}
+
+.justify-content-between { /* Nueva clase para espaciar elementos */
+    justify-content: space-between;
 }
 
 .justify-content-space-around {
@@ -37,124 +55,220 @@ body {
     flex-direction: column;
 }
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-12 { /* Nueva clase para ocupar todo el ancho */
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.col-md-4 {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.col-md-6 { /* Nueva clase para ocupar la mitad del ancho */
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
 /* ======================== */
-/* Estilos de Componentes  */
+/* Estilos de Componentes */
 /* ======================== */
 header {
     background-color: #e9dcf5; /* violeta */
+    padding: 20px 0;
 }
 
 footer {
     background-color: #e4e418; /* amarillo claro */
+    padding: 20px 0;
+    text-align: center;
 }
 
 .navbar {
     display: flex;
     background-color: brown;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .navbar a {
     color: aliceblue;
     text-decoration: none;
-    padding: 10px;
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .recuadro {
-    border: 2px solid brown; 
-    padding: 100px;
-    background-color: #f5f5f5; 
-    width: fit-content;
+    border: 2px solid brown;
+    padding: 20px;
+    background-color: #f5f5f5;
     margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.image img {
+/* Clases para imágenes fluidas y con sombra (reemplazan img-fluid, rounded, shadow de Bootstrap) */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Para eliminar espacios extra debajo de la imagen */
+}
+
+.img-rounded {
+    border-radius: 8px; /* Redondeado, reemplaza .rounded */
+}
+
+.img-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra, reemplaza .shadow */
+}
+
+/* Estilos para las tarjetas */
+.card {
+    background-color: #ebebeb;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+/* Clases modificadoras para los colores de las tarjetas si quieres que sean diferentes */
+.card.calidad {
+    background-color: #0866d2; /* Color para la tarjeta de Calidad */
+}
+
+.card.comunidad {
+    background-color: #08d22d; /* Color para la tarjeta de Comunidad */
+}
+
+.card.atencion {
+    background-color: #cb08d2; /* Color para la tarjeta de Atención */
+}
+
+.card-image { /* Para las imágenes circulares de "Acerca de" */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #e9dcf5;
+}
+
+/* Estilos para las imágenes de productos dentro de las tarjetas (en "Nuestros Productos") */
+.card-image-product {
+    width: 100%; /* Asegura que la imagen ocupe el 100% del ancho de la tarjeta */
+    height: 250px; /* Le da una altura fija para consistencia, puedes ajustar este valor */
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
+    border-radius: 8px; /* Opcional: para que las esquinas de las imágenes sean redondeadas */
+    margin-bottom: 15px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilos para el precio del producto */
+.precio-producto {
+    font-weight: bold;
+    color: rgb(138, 17, 17);
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Estilos para los elementos dentro de las tarjetas */
+.card h3, .card p {
+    margin: 0;
+}
+
+.card h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+/* Botones (reemplazan btn y btn-danger/btn-primary de Bootstrap) */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s;
-    width: 100%; /* Asegura que la imagen sea responsiva */
+    transition: background-color 0.3s ease;
 }
 
-.image img:hover {
-    transform: scale(1.1);
-}
-
-/* ======================== */
-/* Clases de Utilidad      */
-/* ======================== */
-.background-none {
-    background-color: transparent;
-}
-
-.background-brown {
-    background-color: rgb(138, 17, 17);
-}
-
-.color-aliceblue {
-    color: aliceblue;
-}
-
-.color-white {
+.btn-danger {
+    background-color: #dc3545; /* Rojo */
     color: white;
+    border: 1px solid #dc3545;
 }
 
-.color-black {
-    color: black;
+.btn-danger:hover {
+    background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
 }
 
-.color-aqua {
-    color: aqua;
+.btn-primary {
+    background-color: #007bff; /* Azul */
+    color: white;
+    border: 1px solid #007bff;
 }
 
-.font-family-courier {
-    font-family: 'Courier New', Courier, monospace;
+.btn-primary:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
 }
 
-.font-family-franklin {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+/* Campos de formulario (reemplazan form-control de Bootstrap) */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
 }
 
-.font-size-1 {
-    font-size: 800; /* Nota: Esto parece ser un error, debería ser 'font-weight' o un valor con 'px', 'em', etc. */
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-.no-underline {
-    text-decoration: none;
+/* Media Queries para responsividad */
+@media (max-width: 767px) {
+    .navbar a {
+        padding: 10px 15px;
+        flex: 1 1 50%;
+        text-align: center;
+    }
+    .col-md-4, .col-md-6, .col-12 { /* Ajusta todas las columnas para que se apilen en móviles */
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
-.no-decoration {
-    text-decoration: none;
-}
-
-.round-1 {
-    border-radius: .3rem;
-}
-
-.round-2 {
-    border-radius: .5rem;
-}
-
-/* Pseudoclases y Pseudoelementos */
-nav a:hover {
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.2); /* Efecto al pasar el mouse */
-}
-
-p {
-    color: aquamarine;
-}
-
-.parrafo-verde {
-    color: green;
-}
-
-#parrafo-azul {
-    color: blue;
-}
-
-/* ======================== */
-/* Media Queries (Responsivo) */
-/* ======================== */
 @media (min-width: 768px) {
     .navbar {
         flex-direction: row;
@@ -162,3 +276,31 @@ p {
         padding: 0 20px;
     }
 }
+
+/* Clases de Utilidad */
+.text-center { text-align: center; }
+.mb-0 { margin-bottom: 0 !important; } /* Importante para anular otros márgenes */
+.mb-3 { margin-bottom: 15px; } /* Pequeño margen inferior */
+.mb-4 { margin-bottom: 20px; } /* Margen inferior */
+.mt-3 { margin-top: 15px; } /* Margen superior */
+.p-3 { padding: 15px; } /* Relleno */
+.py-3 { padding-top: 15px; padding-bottom: 15px; }
+.py-4 { padding-top: 20px; padding-bottom: 20px; }
+.my-5 { margin-top: 30px; margin-bottom: 30px; } /* Margen vertical */
+.fw-bold { font-weight: bold; }
+
+.background-none { background-color: transparent; }
+.background-brown { background-color: rgb(138, 17, 17); }
+.color-aliceblue { color: aliceblue; }
+.color-white { color: white; }
+.color-black { color: black; }
+.color-aqua { color: aqua; }
+
+.font-family-courier { font-family: 'Courier New', Courier, monospace; }
+.font-family-franklin { font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+
+.no-underline { text-decoration: none; }
+.no-decoration { text-decoration: none; }
+
+.round-1 { border-radius: .3rem; }
+.round-2 { border-radius: .5rem; }

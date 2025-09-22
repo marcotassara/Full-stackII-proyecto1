@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Lista de productos con sus detalles
     const productos = [
         {
             nombre: "Coca-Cola 3L",
@@ -33,27 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: "./assets/img/coca-cola1.25L.jpg"
         }
     ];
-
-  
+ 
     const productosContainer = document.getElementById('productos-container');
 
     function crearTarjetaDeProducto(producto) {
-
+        // Usamos las clases de tu styles.css
         return `
-            <div class="col-md-4 mb-4 text-center">
-                <div class="card shadow rounded-3 h-100">
-                    <img src="${producto.imagen}" class="card-img-top image rounded-top" alt="Imagen de ${producto.nombre}">
-                    <div class="card-body">
-                        <h5 class="card-title font-family-franklin">${producto.nombre}</h5>
-                        <p class="card-text">${producto.descripcion}</p>
-                        <p class="card-text fw-bold color-black">${producto.precio}</p>
-                    </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="${producto.imagen}" alt="Imagen de ${producto.nombre}" class="card-image-product">
+                    <h3>${producto.nombre}</h3>
+                    <p>${producto.descripcion}</p>
+                    <p class="precio-producto">${producto.precio}</p>
                 </div>
             </div>
         `;
     }
 
-    // Recorremos la lista de productos y agregamos cada uno al contenedor
     productos.forEach(producto => {
         const tarjetaHTML = crearTarjetaDeProducto(producto);
         productosContainer.innerHTML += tarjetaHTML;
